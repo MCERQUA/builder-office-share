@@ -1,0 +1,12 @@
+#!/bin/sh
+# Runs tools/check_public.py on what you are about to commit. Turn it on once per clone:
+#   git config core.hooksPath .githooks
+# Tries python, python3, then py, and skips any that cannot actually run
+# (the Windows Store "python3" stub exists but does nothing).
+for py in python python3 py; do
+  if command -v "$py" >/dev/null 2>&1 && "$py" -c "import sys" >/dev/null 2>&1; then
+    exec "$py" tools/check_public.py --staged
+  fi
+done
+echo "pre-commit: no working Python found, so the public check cannot run. Install Python 3 and commit again." >&2
+exit 1
