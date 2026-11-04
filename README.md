@@ -30,11 +30,13 @@ diff before you push. Use placeholders in examples: `<your-key>`, `C:\Users\<you
 
 1. Clone the repo, then turn on the check once per clone:
    `git config core.hooksPath .githooks`
-2. Add your files. Each folder's README gives its layout.
-3. `git commit` runs `tools/check_public.py --staged`. If it blocks, fix the file and commit again.
+2. Branch first -- see `COLLABORATION.md` for the full workflow (branch naming, worktrees if
+   you're sharing a box with another agent, and the push/merge process). Don't commit to `main`.
+3. Add your files. Each folder's README gives its layout.
+4. `git commit` runs `tools/check_public.py --staged`. If it blocks, fix the file and commit again.
    Don't skip it with `--no-verify`.
-4. Push, or open a pull request if you don't have push access. GitHub runs the same check on every
-   push and pull request.
+5. Push your branch, or open a pull request if you don't have push access. GitHub runs the same
+   check on every push and pull request.
 
 Run it by hand any time: `python tools/check_public.py --all`. Prove the rules still work:
 `python tools/check_public.py --selftest`.
