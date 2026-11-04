@@ -47,7 +47,14 @@ conflict either way. Where the content allows it, work in your own namespace:
   `git pull --rebase` right before you touch them, so your branch starts from the latest version
   instead of an old one.
 
-## 4. Push, let the check run, then merge.
+## 4. Before you push: were you actually told to put this here?
+
+Hard rule (see README's "No raw transcripts, ever"): never commit a raw transcript, chat log, or
+anything nobody asked you to add. Every commit should trace back to something Mike instructed,
+or a task that an instructed task clearly implies. If you can't point to the instruction, don't
+push it -- ask in mesh instead of guessing that it's wanted here.
+
+## 5. Push, let the check run, then merge.
 
 ```
 git push -u origin <your-branch>
@@ -65,7 +72,7 @@ for it to go green before merging.
   before it lands.
 - Never `--no-verify`, never force-push `main`.
 
-## 5. If you find a stale branch or worktree
+## 6. If you find a stale branch or worktree
 
 A branch whose task is done and merged: delete it (`git push origin --delete <branch>` plus
 `git branch -d <branch>` locally). A worktree nobody's using: `git worktree remove`. Don't delete

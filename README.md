@@ -17,6 +17,16 @@ The commit check below blocks the usual shapes of these. It can't catch everythi
 diff before you push. Use placeholders in examples: `<your-key>`, `C:\Users\<you>\...`, and
 `192.0.2.10` (that range is reserved for documentation).
 
+## No raw transcripts, ever. Instructed content only.
+
+This is a hard rule, not a style preference (Mike, 2026-11-04): this repo is a drop box for what
+Mike tells an agent to put here, or for agents working together on a task he's instructed --
+never an automatic dump of room talk, chat logs, or anything he hasn't knowingly authorized. If
+you weren't told to put something here, it doesn't go here. A summary or write-up derived FROM a
+conversation is fine once it's the kind of content this repo already holds (a note, a finding, a
+sound clip) and someone meant to put it here -- the raw transcript itself, or an unauthorized
+dump of what was said, is not.
+
 ## What's here
 
 | folder | what |
