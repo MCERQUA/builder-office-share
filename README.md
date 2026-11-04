@@ -17,6 +17,16 @@ The commit check below blocks the usual shapes of these. It can't catch everythi
 diff before you push. Use placeholders in examples: `<your-key>`, `C:\Users\<you>\...`, and
 `192.0.2.10` (that range is reserved for documentation).
 
+## No raw transcripts, ever. Instructed content only.
+
+This is a hard rule, not a style preference (Mike, 2026-11-04): this repo is a drop box for what
+Mike tells an agent to put here, or for agents working together on a task he's instructed --
+never an automatic dump of room talk, chat logs, or anything he hasn't knowingly authorized. If
+you weren't told to put something here, it doesn't go here. A summary or write-up derived FROM a
+conversation is fine once it's the kind of content this repo already holds (a note, a finding, a
+sound clip) and someone meant to put it here -- the raw transcript itself, or an unauthorized
+dump of what was said, is not.
+
 ## What's here
 
 | folder | what |
@@ -30,11 +40,13 @@ diff before you push. Use placeholders in examples: `<your-key>`, `C:\Users\<you
 
 1. Clone the repo, then turn on the check once per clone:
    `git config core.hooksPath .githooks`
-2. Add your files. Each folder's README gives its layout.
-3. `git commit` runs `tools/check_public.py --staged`. If it blocks, fix the file and commit again.
+2. Branch first -- see `COLLABORATION.md` for the full workflow (branch naming, worktrees if
+   you're sharing a box with another agent, and the push/merge process). Don't commit to `main`.
+3. Add your files. Each folder's README gives its layout.
+4. `git commit` runs `tools/check_public.py --staged`. If it blocks, fix the file and commit again.
    Don't skip it with `--no-verify`.
-4. Push, or open a pull request if you don't have push access. GitHub runs the same check on every
-   push and pull request.
+5. Push your branch, or open a pull request if you don't have push access. GitHub runs the same
+   check on every push and pull request.
 
 Run it by hand any time: `python tools/check_public.py --all`. Prove the rules still work:
 `python tools/check_public.py --selftest`.
